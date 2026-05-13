@@ -10,33 +10,39 @@ import {
 
 const features = [
   {
-    title: '爆款雷达',
-    description: '按类目与时段聚合表现，快速定位高转化内容。',
+    title: 'Bestseller radar',
+    description:
+      'Roll up performance by category and time window to spot high-converting content fast.',
     icon: Sparkles,
   },
   {
-    title: '指标面板',
-    description: '浏览量、互动、CTR 与带货销量一屏对比，支持导出。',
+    title: 'Metrics hub',
+    description:
+      'Views, engagement, CTR, and sales in one view—demo export affordances in the layout.',
     icon: BarChart3,
   },
   {
-    title: '趋势对比',
-    description: '对比多条视频曲线，找出节奏与钩子差异。',
+    title: 'Trend compare',
+    description:
+      'Compare multiple video curves to see pacing and hook differences side by side.',
     icon: LineChart,
   },
   {
-    title: '发布工作流',
-    description: '从素材上传到文案草稿，减少来回切换。',
+    title: 'Publish workflow',
+    description:
+      'From upload to caption drafts—fewer tab hops in a single surface.',
     icon: Upload,
   },
   {
-    title: '低延迟体验',
-    description: '本地演示数据，首屏即可交互，无需等待接口。',
+    title: 'Snappy UX',
+    description:
+      'Sample data loads locally so the first screen is interactive with no API wait.',
     icon: Zap,
   },
   {
-    title: '演示环境',
-    description: '所有数据均为虚构示例，不连接真实 TikTok 账号。',
+    title: 'Demo mode',
+    description:
+      'All numbers are fictional—no connection to a real TikTok account.',
     icon: ShieldCheck,
   },
 ] as const
@@ -63,7 +69,7 @@ export function Landing() {
 
       <section className="mx-auto max-w-5xl px-4 pb-16 pt-16 sm:px-6 sm:pt-24">
         <p className="mb-4 inline-flex items-center rounded-full border border-zinc-800 bg-zinc-900/60 px-3 py-1 text-xs font-medium text-zinc-400">
-          演示产品 · 非官方 TikTok 工具
+          Demo product · not affiliated with TikTok
         </p>
         <h1 className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
           BestSellerAnalyzer
@@ -79,16 +85,16 @@ export function Landing() {
             to="/publish"
             className="inline-flex items-center justify-center rounded-lg border border-zinc-700 bg-zinc-900/40 px-5 py-2.5 text-sm font-medium text-zinc-200 transition hover:border-zinc-600 hover:bg-zinc-900"
           >
-            去发布页
+            Open Publish
           </Link>
         </div>
       </section>
 
       <section className="border-y border-zinc-800/60 bg-zinc-950/50 py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
-          <h2 className="text-xl font-semibold text-white">功能亮点</h2>
+          <h2 className="text-xl font-semibold text-white">Features</h2>
           <p className="mt-2 text-sm text-zinc-500">
-            以下为演示文案，用于展示布局与信息层级。
+            Placeholder copy to showcase layout and hierarchy.
           </p>
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {features.map(({ title, description, icon: Icon }) => (
@@ -181,7 +187,7 @@ export function Landing() {
       </section>
 
       <footer className="border-t border-zinc-800/60 py-8 text-center text-xs text-zinc-600">
-        BestSellerAnalyzer · 演示环境
+        BestSellerAnalyzer · demo environment
       </footer>
     </div>
   )

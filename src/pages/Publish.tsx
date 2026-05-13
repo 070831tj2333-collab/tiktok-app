@@ -15,7 +15,7 @@ export function Publish() {
   const [fileLabel, setFileLabel] = useState<string | null>(null)
 
   const onPublish = () => {
-    window.alert('演示：尚未连接真实 TikTok 发布接口。')
+    window.alert('Demo: TikTok publish API is not connected.')
   }
 
   const onDrop = useCallback((e: DragEvent) => {
@@ -37,7 +37,7 @@ export function Publish() {
           Publish
         </h1>
         <p className="mt-1 text-sm text-zinc-500">
-          上传区与发布按钮均为演示交互。
+          Upload and publish actions are demo-only.
         </p>
       </div>
 
@@ -70,14 +70,14 @@ export function Publish() {
           <UploadCloud className="size-6" aria-hidden />
         </span>
         <span className="text-center text-sm font-medium text-zinc-200">
-          拖放文件到此处，或点击选择
+          Drag and drop a file here, or click to choose
         </span>
         <span className="text-center text-xs text-zinc-500">
-          仅视频文件（演示）
+          Video files only (demo)
         </span>
         {fileLabel ? (
           <span className="text-center text-xs font-medium text-slate-300">
-            已选择：{fileLabel}
+            Selected: {fileLabel}
           </span>
         ) : null}
       </label>
@@ -88,7 +88,7 @@ export function Publish() {
             htmlFor="caption"
             className="text-sm font-medium text-zinc-300"
           >
-            文案
+            Caption
           </label>
           <span className="text-xs tabular-nums text-zinc-500">
             {caption.length} / {CAPTION_MAX}
@@ -100,7 +100,7 @@ export function Publish() {
           maxLength={CAPTION_MAX}
           onChange={(e) => setCaption(e.target.value)}
           rows={8}
-          placeholder="写一段吸引人的描述…"
+          placeholder="Write a compelling description…"
           className="w-full resize-y rounded-lg border border-zinc-800 bg-zinc-950 px-3 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-600 focus:border-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-600/30"
         />
       </div>

@@ -6,7 +6,7 @@ import {
 } from '../data/sample'
 
 function formatInt(n: number) {
-  return n.toLocaleString('zh-CN')
+  return n.toLocaleString('en-US')
 }
 
 function formatPct(n: number) {
@@ -16,28 +16,28 @@ function formatPct(n: number) {
 export function Dashboard() {
   const metrics = [
     {
-      label: '总浏览量',
+      label: 'Total views',
       value: formatInt(sampleSummary.views),
       icon: Eye,
-      hint: '近 30 天演示数据',
+      hint: 'Last 30 days (demo)',
     },
     {
-      label: '总点赞',
+      label: 'Total likes',
       value: formatInt(sampleSummary.likes),
       icon: Heart,
-      hint: '含重复互动',
+      hint: 'Includes repeat engagement',
     },
     {
-      label: '平均 CTR',
+      label: 'Avg. CTR',
       value: formatPct(sampleSummary.ctr),
       icon: MousePointerClick,
-      hint: '点击 / 曝光',
+      hint: 'Clicks / impressions',
     },
     {
-      label: '带货销量',
+      label: 'Units sold',
       value: formatInt(sampleSummary.sales),
       icon: ShoppingBag,
-      hint: '演示订单数',
+      hint: 'Demo order count',
     },
   ] as const
 
@@ -48,7 +48,7 @@ export function Dashboard() {
           Dashboard
         </h1>
         <p className="mt-1 text-sm text-zinc-500">
-          以下为 sample 数据，用于展示卡片与表格布局。
+          Sample data for cards and table layout.
         </p>
       </div>
 
@@ -67,13 +67,13 @@ export function Dashboard() {
             </p>
             <p className="text-sm text-slate-400">{sampleProfile.handle}</p>
             <p className="mt-1 text-sm tabular-nums text-zinc-300">
-              粉丝 {formatInt(sampleProfile.followers)}
+              {formatInt(sampleProfile.followers)} followers
             </p>
             <p className="mt-2 max-w-xl text-sm leading-relaxed text-zinc-400">
               {sampleProfile.bio}
             </p>
             <p className="mt-3 text-xs text-zinc-600">
-              地区：{sampleProfile.region} · ID：{sampleProfile.id}
+              Region: {sampleProfile.region} · ID: {sampleProfile.id}
             </p>
           </div>
         </div>
@@ -103,18 +103,20 @@ export function Dashboard() {
 
       <section className="overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/20">
         <div className="border-b border-zinc-800 px-4 py-4 sm:px-6">
-          <h2 className="text-base font-semibold text-white">视频表现</h2>
-          <p className="mt-0.5 text-xs text-zinc-500">缩略图来自 picsum.photos</p>
+          <h2 className="text-base font-semibold text-white">Video performance</h2>
+          <p className="mt-0.5 text-xs text-zinc-500">
+            Thumbnails from picsum.photos
+          </p>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full min-w-[640px] text-left text-sm">
             <thead className="bg-zinc-950/80 text-xs font-medium uppercase tracking-wide text-zinc-500">
               <tr>
-                <th className="px-4 py-3 sm:px-6">视频</th>
-                <th className="px-4 py-3">浏览</th>
-                <th className="px-4 py-3">点赞</th>
+                <th className="px-4 py-3 sm:px-6">Video</th>
+                <th className="px-4 py-3">Views</th>
+                <th className="px-4 py-3">Likes</th>
                 <th className="px-4 py-3">CTR</th>
-                <th className="px-4 py-3 sm:pr-6">销量</th>
+                <th className="px-4 py-3 sm:pr-6">Sales</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-zinc-800">
