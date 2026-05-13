@@ -76,7 +76,7 @@ export function Landing() {
         </h1>
         <div className="mt-10 flex flex-wrap gap-3">
           <Link
-            to="/dashboard"
+            to="/connect/tiktok"
             className="inline-flex items-center justify-center rounded-lg bg-slate-100 px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-white"
           >
             Continue with TikTok

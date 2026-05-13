@@ -1,5 +1,6 @@
-import { Link, NavLink, Outlet } from 'react-router-dom'
-import { BarChart3 } from 'lucide-react'
+import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom'
+import { BarChart3, LogOut } from 'lucide-react'
+import { clearDemoAuth } from '../lib/demoAuth'
 
 const navClass = ({ isActive }: { isActive: boolean }) =>
   [
@@ -10,6 +11,13 @@ const navClass = ({ isActive }: { isActive: boolean }) =>
   ].join(' ')
 
 export function AppShell() {
+  const navigate = useNavigate()
+
+  const onLogout = () => {
+    clearDemoAuth()
+    navigate('/', { replace: true })
+  }
+
   return (
     <div className="flex min-h-dvh flex-col bg-zinc-950">
       <header className="border-b border-zinc-800/80 bg-zinc-950/90 backdrop-blur">
@@ -25,14 +33,24 @@ export function AppShell() {
               BestSellerAnalyzer
             </span>
           </Link>
-          <nav className="flex items-center gap-1">
-            <NavLink to="/dashboard" className={navClass}>
-              Dashboard
-            </NavLink>
-            <NavLink to="/publish" className={navClass}>
-              Publish
-            </NavLink>
-          </nav>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <nav className="flex items-center gap-1">
+              <NavLink to="/dashboard" className={navClass}>
+                Dashboard
+              </NavLink>
+              <NavLink to="/publish" className={navClass}>
+                Publish
+              </NavLink>
+            </nav>
+            <button
+              type="button"
+              onClick={onLogout}
+              className="flex items-center gap-1.5 rounded-lg px-2.5 py-2 text-xs font-medium text-zinc-500 transition hover:bg-zinc-900 hover:text-zinc-300 sm:text-sm"
+            >
+              <LogOut className="size-4" aria-hidden />
+              <span className="hidden sm:inline">Log out</span>
+            </button>
+          </div>
         </div>
       </header>
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6">
