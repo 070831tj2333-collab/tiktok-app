@@ -115,80 +115,27 @@ export function Landing() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-5xl space-y-4 px-4 py-16 sm:px-6">
-        <details className="group rounded-xl border border-zinc-800 bg-zinc-900/30 px-4 py-3 open:pb-4 sm:px-5 sm:py-4">
-          <summary className="cursor-pointer list-none text-xl font-semibold text-white outline-none [&::-webkit-details-marker]:hidden">
-            <span className="inline-flex w-full items-center justify-between gap-2">
-              <span>Terms of Service</span>
-              <span className="text-sm font-normal text-zinc-500 transition-transform group-open:rotate-180">
-                ▾
-              </span>
-            </span>
-          </summary>
-          <div className="mt-4 space-y-3 text-sm leading-relaxed text-zinc-400">
-            <p>
-              By using BestSellerAnalyzer, you agree to use the service
-              responsibly and comply with all applicable laws and platform
-              policies.
-            </p>
-            <p>
-              BestSellerAnalyzer provides ecommerce analytics and automation
-              tools for TikTok-related workflows.
-            </p>
-            <p>
-              Users are responsible for their own content, data usage, and
-              compliance with TikTok policies.
-            </p>
-            <p>The service may be updated or modified at any time.</p>
-            <p>
-              Contact:{' '}
-              <a
-                href="mailto:070831Tj2333@gmail.com"
-                className="text-slate-300 underline decoration-zinc-600 underline-offset-2 hover:text-white"
-              >
-                070831Tj2333@gmail.com
-              </a>
-            </p>
-          </div>
-        </details>
-        <details className="group rounded-xl border border-zinc-800 bg-zinc-900/30 px-4 py-3 open:pb-4 sm:px-5 sm:py-4">
-          <summary className="cursor-pointer list-none text-xl font-semibold text-white outline-none [&::-webkit-details-marker]:hidden">
-            <span className="inline-flex w-full items-center justify-between gap-2">
-              <span>Privacy Policy</span>
-              <span className="text-sm font-normal text-zinc-500 transition-transform group-open:rotate-180">
-                ▾
-              </span>
-            </span>
-          </summary>
-          <div className="mt-4 space-y-3 text-sm leading-relaxed text-zinc-400">
-            <p>
-              BestSellerAnalyzer may collect basic usage data necessary for
-              workflow automation and analytics.
-            </p>
-            <p>We do not sell personal information.</p>
-            <p>User data is only used for:</p>
-            <ul className="list-disc space-y-1 pl-5">
-              <li>analytics</li>
-              <li>automation</li>
-              <li>workflow processing</li>
-            </ul>
-            <p>Users may request data deletion at any time.</p>
-            <p>
-              Contact:{' '}
-              <a
-                href="mailto:070831tj2333@gmail.com"
-                className="text-slate-300 underline decoration-zinc-600 underline-offset-2 hover:text-white"
-              >
-                070831tj2333@gmail.com
-              </a>
-            </p>
-          </div>
-        </details>
-      </section>
-
       <footer className="border-t border-zinc-800/60 py-8 text-center text-xs text-zinc-600">
-        BestSellerAnalyzer · demo environment
+        <p>BestSellerAnalyzer · demo environment</p>
+        <p className="mt-2 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+          <Link
+            to="/terms"
+            className="text-zinc-500 underline decoration-zinc-700 underline-offset-2 transition hover:text-zinc-300"
+          >
+            Terms of Service
+          </Link>
+          <span className="text-zinc-700" aria-hidden>
+            ·
+          </span>
+          <Link
+            to="/privacy"
+            className="text-zinc-500 underline decoration-zinc-700 underline-offset-2 transition hover:text-zinc-300"
+          >
+            Privacy Policy
+          </Link>
+        </p>
       </footer>
+
     </div>
   )
 }

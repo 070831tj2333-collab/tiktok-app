@@ -3,6 +3,8 @@ import { RequireAuth } from './components/RequireAuth'
 import { AppShell } from './layouts/AppShell'
 import { Dashboard } from './pages/Dashboard'
 import { Landing } from './pages/Landing'
+import { Privacy } from './pages/Privacy'
+import { Terms } from './pages/Terms'
 import { Publish } from './pages/Publish'
 import { TikTokConnectSandbox } from './pages/TikTokConnectSandbox'
 
@@ -11,6 +13,8 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
         <Route path="/connect/tiktok" element={<TikTokConnectSandbox />} />
         <Route element={<RequireAuth />}>
           <Route element={<AppShell />}>
